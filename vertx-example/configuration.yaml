@@ -1,8 +1,12 @@
 httpServer:
     port: 8080
 database:
+    maxPoolSize: 90
     host: "localhost"
-    port: "25432"
+    port: 25432
     database: "vertx"
     username: root
     password: vertx
+vertx:
+    workerPoolSize: 20
+    internalBlockingPoolSize: 20
