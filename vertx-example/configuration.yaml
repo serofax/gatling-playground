@@ -1,0 +1,8 @@
+httpServer:
+    port: 8080
+database:
+    host: "localhost"
+    port: "25432"
+    database: "vertx"
+    username: root
+    password: vertx

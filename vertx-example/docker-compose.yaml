@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  gatling-vertx-example:
+    container_name: "gatling-vertx-example"
+    image: "postgres:10.6"
+    restart: always
+    ports:
+      - "25432:5432"
+    volumes:
+        - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: vertx
+      POSTGRES_DB: vertx
