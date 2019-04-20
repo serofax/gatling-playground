@@ -1,6 +1,9 @@
 # Gatling maven
 
 ## How to run
+Start an application
+* [Spring boot example](../spring-boot-example/README.md)
+
 Normal
 ```bash
 $ ./mvnw gatling:test -Dgatling.simulationClass=com.github.serofax.gatling.ProjectPerformanceSimulation
