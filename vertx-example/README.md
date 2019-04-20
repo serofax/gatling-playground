@@ -58,16 +58,12 @@ $ curl http://localhost:8080/projectnodb
 ]
 ```
 
-## Server tuning
+## Vertx tuning
 ```yaml
 vertx:
     workerPoolSize: 20
     internalBlockingPoolSize: 20
     eventLoopPoolSize: 8
 ```
-
-`workerPoolSize` defines how many worker threads are available. Used here mostly for coroutine execution.
-`internalBlockingPoolSize` scales with worker threads. `eventLoopPoolSize`does mostly of the work and connection handling. 
-
-**TODO**
+See [VertxOptions](https://vertx.io/docs/apidocs/io/vertx/core/VertxOptions.html)
 

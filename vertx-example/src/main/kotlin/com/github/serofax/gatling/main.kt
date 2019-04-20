@@ -25,11 +25,8 @@ suspend fun main() {
     format = "yaml")
   val config = ConfigRetriever.create(initVertx, ConfigRetrieverOptions().addStore(store)).getConfigAwait()
   val vertxConfig = config.getJsonObject("vertx", JsonObject())
-  val vertxOptions = vertxOptionsOf(
-    workerPoolSize = vertxConfig.getInteger("workerPoolSize", 20),
-    internalBlockingPoolSize = vertxConfig.getInteger("internalBlockingPoolSize", 20),
-    eventLoopPoolSize = vertxConfig.getInteger("eventLoopPoolSize", CpuCoreSensor.availableProcessors() * 2)
-  )
+
+  val vertxOptions = VertxOptions(vertxConfig)
 
   initVertx.closeAwait();
 
