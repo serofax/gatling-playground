@@ -1,19 +1,12 @@
-package com.github.serofax.gatling.service
+package com.github.serofax.gatling.project.repository
 
-import com.github.serofax.gatling.model.Project
-import io.vertx.core.Vertx
+import com.github.serofax.gatling.project.api.model.Project
 import io.vertx.core.json.JsonObject
 import io.vertx.ext.asyncsql.AsyncSQLClient
-import io.vertx.ext.asyncsql.PostgreSQLClient
 import io.vertx.kotlin.ext.sql.getConnectionAwait
 import io.vertx.kotlin.ext.sql.queryAwait
 
-class ProjectService(private val vx: Vertx, config: JsonObject) {
-  var postgresClient: AsyncSQLClient
-
-  init {
-    postgresClient = PostgreSQLClient.createShared(vx, config)
-  }
+class ProjectRepository(private val postgresClient: AsyncSQLClient) {
 
   fun mapToProject(row: JsonObject) = Project(
     id = row.getInteger("id"),

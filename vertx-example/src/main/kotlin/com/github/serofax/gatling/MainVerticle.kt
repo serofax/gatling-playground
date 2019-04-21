@@ -1,5 +1,7 @@
 package com.github.serofax.gatling
 
+import com.github.serofax.gatling.endpoint.HttpServerVerticle
+import com.github.serofax.gatling.project.ProjectVerticle
 import io.vertx.config.ConfigRetriever
 import io.vertx.config.ConfigRetrieverOptions
 import io.vertx.kotlin.config.configStoreOptionsOf
@@ -23,6 +25,7 @@ class MainVerticle : CoroutineVerticle() {
 
     println(config)
 
+    vertx.deployVerticleAwait(ProjectVerticle(), deploymentOptionsOf(config = config))
     vertx.deployVerticleAwait(HttpServerVerticle(), deploymentOptionsOf(config = config))
   }
 }
