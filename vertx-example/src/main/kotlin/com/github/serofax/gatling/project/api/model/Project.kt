@@ -1,4 +1,4 @@
-package com.github.serofax.gatling.model
+package com.github.serofax.gatling.project.api.model
 
 data class Project(
   val id: Int? = null,
