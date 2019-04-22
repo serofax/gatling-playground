@@ -3,6 +3,7 @@
 ## How to run
 Start an application
 * [Spring boot example](../spring-boot-example/README.md)
+* [Vert.x example](../vertx-example/README.md)
 
 Normal
 ```bash
